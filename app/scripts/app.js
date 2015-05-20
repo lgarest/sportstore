@@ -11,16 +11,18 @@
 angular
   .module('sportstoreApp', [
     'customFilters',
+    'cart',
     'ngResource',
     'ngRoute'
   ])
   .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        // templateUrl: 'views/productList.html',
-        // controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
+    $routeProvider.when('/checkout', {
+        templateUrl: 'views/checkoutSummary.html'
+      });
+    $routeProvider.when('/products', {
+        templateUrl: 'views/productList.html'
+      });
+    $routeProvider.otherwise({
+        redirectTo: '/products'
       });
   });

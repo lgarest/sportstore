@@ -1,4 +1,4 @@
-<div class="panel panel-default row" ng-controller="ProductslistCtrl" ng-hide="data.error">
+<div class="panel panel-default row" ng-controller="ProductslistCtrl" ng-hide="data.error" style="padding-top: 10px; padding-bottom: 10px;">
   <div class="col-xs-3">
 
     <a class="btn btn-block btn-default btn-lg" ng-click="selectCategory()">Home</a>
@@ -16,6 +16,10 @@
           {{ item.price | currency }}
         </span>
       </h3>
+      <button class="btn btn-success pull-right"
+        ng-click="addProductToCart(item)">
+        Add to cart
+      </button>
       <span class="lead">{{ item.description }}</span>
     </div>
     <div class="pull-right btn-group">
