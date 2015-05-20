@@ -22,6 +22,12 @@ angular
     $routeProvider.when('/products', {
         templateUrl: 'views/productList.html'
       });
+    $routeProvider.when('/complete', {
+        templateUrl: 'views/thankYou.html'
+      });
+    $routeProvider.when('/placeorder', {
+        templateUrl: 'views/placeOrder.html'
+      });
     $routeProvider.otherwise({
         redirectTo: '/products'
       });
