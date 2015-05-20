@@ -18,6 +18,10 @@ angular.module('sportstoreApp')
         $scope.selectedPage = 1;
         $scope.pageSize = productListPageCount;
 
+        /**
+         * Sets the new category
+         * @param  {String} category name of the category
+         */
         $scope.selectCategory = function (category) {
             selectedCategory = category;
             $scope.selectedPage = 1;
@@ -27,8 +31,14 @@ angular.module('sportstoreApp')
             $scope.selectedPage = newPage;
         };
 
+        /**
+         * Filters by selected category
+         * @param  {object} product object
+         * @return {boolean}         true if matches the selectedCategory
+         */
         $scope.categoryFilterFn = function (product) {
-            return angular.isUndefined(selectedCategory) || product.category === selectedCategory;
+            return angular.isUndefined(selectedCategory) || 
+            product.category === selectedCategory;
         };
 
         $scope.getCategoryClass = function(category){

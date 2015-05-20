@@ -1,4 +1,4 @@
-<div class="panel panel-default row" ng-controller="ProductslistCtrl">
+<div class="panel panel-default row" ng-controller="ProductslistCtrl" ng-hide="data.error">
   <div class="col-xs-3">
 
     <a class="btn btn-block btn-default btn-lg" ng-click="selectCategory()">Home</a>
@@ -9,7 +9,7 @@
       {{ item }}</a>
   </div>
   <div class="col-xs-8">
-    <div class="well" ng-repeat="item in data.products | filter:categoryFilterFn">
+    <div class="well" ng-repeat="item in data.products | filter:categoryFilterFn | range:selectedPage:pageSize">
       <h3>
         <strong>{{ item.name }}</strong>
         <span class="pull-right label label-primary">
@@ -17,6 +17,14 @@
         </span>
       </h3>
       <span class="lead">{{ item.description }}</span>
+    </div>
+    <div class="pull-right btn-group">
+      <a class="btn btn-default"
+        ng-repeat="page in data.products | filter:categoryFilterFn | pageCount:pageSize"
+        ng-click="selectPage($index + 1)"
+        ng-class="getPageClass($index + 1)">
+          {{$index + 1}}
+      </a>
     </div>
   </div>
 </div>
