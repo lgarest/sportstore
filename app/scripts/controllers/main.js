@@ -8,8 +8,8 @@
  * Controller of the sportstoreApp
  */
 angular.module('sportstoreApp')
-  .constant('dataUrl', 'http://localhost:5500/products')
-  .constant('orderUrl', 'http://localhost:5500/orders')
+  .constant('dataUrl', 'http://localhost:2403/products')
+  .constant('orderUrl', 'http://localhost:2403/orders')
   .controller('MainCtrl', function ($scope, $http, dataUrl, orderUrl, cart, $location) {
 
     console.log('MainCtrl loaded');
